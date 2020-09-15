@@ -17,6 +17,7 @@
     "./types",
     "./node_modules/vue/types"
   ],
+  "types": ["node"]
  },
  "include": [
    "src/**/*"

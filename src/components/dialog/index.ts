@@ -83,11 +83,7 @@ export default defineComponent({
       type: Number,
     },
   },
-  emits: [
-    OPEN_EVENT,
-    CLOSE_EVENT,
-    UPDATE_MODEL_EVENT,
-  ],
+  emits: [OPEN_EVENT, CLOSE_EVENT, UPDATE_MODEL_EVENT],
   setup(props, ctx) {
     // 将init部分抽离
     return useDialog(props, ctx as SetupContext)
@@ -167,7 +163,7 @@ export default defineComponent({
           default: () => dialog,
         }
       ),
-      [[vShow, this.visible]]
+      [[vShow, this.modelValue]]
     )
     //Transition动画
     const renderer = h(

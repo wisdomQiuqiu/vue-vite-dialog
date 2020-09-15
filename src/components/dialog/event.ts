@@ -28,16 +28,13 @@ export default function (props: UseDialogProps, ctx: SetupContext) {
   const handleClose = ()=>{
     close()
   }
-  watch(
-    () => props.modelValue,
-    (val) => {
-      if (val) {
-        open()
-      } else {
-        close()
-      }
+  watch(() => props.modelValue, val => {
+    if (val) {
+      open()
+    } else {
+      close()
     }
-  )
+   })
   //打开
   function open() {
     ctx.emit(OPEN_EVENT)
@@ -85,7 +82,6 @@ export default function (props: UseDialogProps, ctx: SetupContext) {
   }
   onMounted(() => {
     if (props.modelValue) {
-      closed.value = false
       open()
     }
   })
