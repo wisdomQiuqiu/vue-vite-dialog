@@ -1,4 +1,5 @@
 <template>
+  <demo/>
   <!-- <HelloWorld msg="Hello Vue 3.0 + Vite" /> -->
   <router-link to="/my" custom v-slot="{ href, navigate }">
     <div :href="href" @click="navigate">{{ href }}</div>
@@ -18,7 +19,8 @@
       2. navigate:
        function navigate(e = {}) { 
           if (guardEvent(e)) 
-            return router[unref(props.replace) ? 'replace' : 'push'](unref(props.to)); 
+            return router[unref(props.replace) 
+                ? 'replace' : 'push'](unref(props.to)); 
           return Promise.resolve(); 
         }
       3. route:
@@ -41,41 +43,38 @@
               "updateGuards": [],
               "enterCallbacks": {},
               "components": {
-                "default": {
-                  "name": "about",
-                  "__scopeId": "data-v-67681100",
-                  "__hmrId": "/src/views/about.vue",
-                  "__file": "/Users/yuyanqiu/货拉拉/vue-vite-dialog/src/views/about.vue"
-                }
+                ...
               }
             }
           ],
           "meta": {},
           "href": "#/about"
         }
-      4. isActive true，路由被激活类名"router-link-active"（可以由exact属性改变）
-      5. isExactActive true，路由被激活类名"router-link-exact-active"（可以由exact属性改变）
+      4. isActive true，路由被激活类名"router-link-active"
+      （可以由exact属性改变）
+      5. isExactActive true，
+      路由被激活类名"router-link-exact-active"（可以由exact属性改变）
    -->
-  <!-- <router-link to="/about" custom v-slot="{ href, navigate,route,isActive,isExactActive }">
+  <router-link to="/about" custom v-slot="{ href, navigate,route,isActive,isExactActive }">
     <div :href="href" @click="navigate">
-      <div>{{ navigate }}</div>
+      <!-- <div>{{ navigate }}</div> -->
       <div>{{ href }}</div>
-      <div>{{route}}</div>
+      <!-- <div>{{route}}</div>
       <div>{{isActive}}</div>
-      <div>{{isExactActive}}</div>
+      <div>{{isExactActive}}</div> -->
     </div>
-  </router-link> -->
+  </router-link>
   <router-view></router-view>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-
+import demo from './components/demo.vue'
 export default {
   name: 'App',
   components: {
-    HelloWorld
-    
+    HelloWorld,
+    demo
   },
   setup(){
    

@@ -1,13 +1,15 @@
 <template>
   <div class="about">
     about
+    <demo/>
   </div>
 </template>
 
 <script>
+import demo from '../components/demo.vue'
 export default {
  name: 'about',
- setup(){}
+ components:{demo},
 }
 </script>
 

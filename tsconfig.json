@@ -1,13 +1,14 @@
 {
  "compilerOptions": {
-   "module": "ES2020",
+   "module": "ES2015",
    "declaration": true,
    "noImplicitAny": false,
    "removeComments": true,
    "moduleResolution": "node",
    "esModuleInterop": true,
    "noLib": false,
-   "target": "es6",
+   "target": "es5",
+   "strict": true,
    "sourceMap": true,
    "lib": [
      "es2020", "DOM"
