@@ -9,6 +9,7 @@
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "allowJs": true,
+    "checkJs": true,
     "esModuleInterop": true, //允许export = 导出和import from 导入
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
@@ -21,8 +22,7 @@
     ],
     "typeRoots": [
       "./types", 
-      "./node_modules/vue/dist/vue.d.ts",
-      "./node_modules/vue-router/dist/vue-router.d.ts"
+      "./node_modules/@types"
     ],
     "paths": {
       "@/*": ["src/*"],
@@ -37,5 +37,5 @@
     "tests/**/*.ts",
     "tests/**/*.tsx"
   ],
-  "exclude": ["node_modules", "dist"] //排除检测项
+  "exclude": ["node_modules", "dist","./vite.config.ts"] //排除检测项
 }

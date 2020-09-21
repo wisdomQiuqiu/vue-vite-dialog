@@ -10,5 +10,8 @@ declare module 'vue/types/vue' {
     [key: string]: any,
   }
 }
+declare let require: any
 declare let global: any
+declare let __dirname: any
+
 declare type TimeoutHandle = ReturnType<typeof global.setTimeout>
