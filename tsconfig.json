@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "esnext",
+    "target": "es6",
+    "module": "ES2020",
     "strict": true,
     "noImplicitThis": false, //不允许this有隐式any的类型
     "jsx": "preserve",
@@ -16,18 +16,12 @@
     "pretty": true, // 给错误和消息设置样式，使用颜色和上下文。
     "baseUrl": "./",
     "outDir": "./",
+    "isolatedModules": true,
     "suppressImplicitAnyIndexErrors":true,
-    "types": [
-      "node", 
-    ],
-    "typeRoots": [
-      "./types", 
-      "./node_modules/@types"
-    ],
     "paths": {
       "@/*": ["src/*"],
     },
-    "lib": ["esnext", "dom", "dom.iterable", "scripthost", "es2019"]
+    "lib": ["esnext", "dom"]
   },
   "include": [
     "src/**/*.ts",
@@ -35,7 +29,8 @@
     "src/**/*.vue",
     "src/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx",
+    "./*.ts"
   ],
-  "exclude": ["node_modules", "dist","./vite.config.ts"] //排除检测项
+  "exclude": ["node_modules", "dist"] //排除检测项
 }
