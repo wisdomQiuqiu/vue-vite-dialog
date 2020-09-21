@@ -4,12 +4,12 @@
   </div>
 </template>
 
-<script>
+<script  lang="ts">
 import {useRouter,useRoute} from 'vue-router'
 export default {
  name: 'my',
  setup(props,ctx){
-   const router = useRouter(window.location.pathname)
+   const router = useRouter()
    const dealrRouterFn = ()=>{
      console.log(router.getRoutes());
    }

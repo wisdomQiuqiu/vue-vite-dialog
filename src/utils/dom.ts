@@ -57,7 +57,7 @@ export function hasClass(el: HTMLElement, cls: string): boolean {
 export const getStyle = function (
   element: HTMLElement,
   styleName: string
-): string {
+): unknown {
   if (typeof window === undefined) return
   if (!element || !styleName) return null
   styleName = camelize(styleName)
@@ -67,7 +67,7 @@ export const getStyle = function (
   try {
     const style = element.style[styleName]
     if (style) return style
-    const computed = document.defaultView.getComputedStyle(element, '')
+    const computed = (document as any).defaultView.getComputedStyle(element, '')
     return computed ? computed[styleName] : ''
   } catch (e) {
     return element.style[styleName]

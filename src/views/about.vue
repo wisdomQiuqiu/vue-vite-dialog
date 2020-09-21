@@ -5,11 +5,12 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import demo from '../components/demo.vue'
 export default {
  name: 'about',
  components:{demo},
+ setup(){}
 }
 </script>
 

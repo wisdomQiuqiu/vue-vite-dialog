@@ -1,30 +1,41 @@
 {
- "compilerOptions": {
-   "module": "ES2015",
-   "declaration": true,
-   "noImplicitAny": false,
-   "removeComments": true,
-   "moduleResolution": "node",
-   "esModuleInterop": true,
-   "noLib": false,
-   "target": "es5",
-   "strict": true,
-   "sourceMap": true,
-   "lib": [
-     "es2020", "DOM"
-   ],
-   "allowSyntheticDefaultImports": true,
-   "typeRoots": [
-    "./types",
-    "./node_modules/vue/types"
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "strict": true,
+    "noImplicitThis": false, //不允许this有隐式any的类型
+    "jsx": "preserve",
+    "importHelpers": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "esModuleInterop": true, //允许export = 导出和import from 导入
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "pretty": true, // 给错误和消息设置样式，使用颜色和上下文。
+    "baseUrl": "./",
+    "outDir": "./",
+    "suppressImplicitAnyIndexErrors":true,
+    "types": [
+      "node", 
+    ],
+    "typeRoots": [
+      "./types", 
+      "./node_modules/vue/dist/vue.d.ts",
+      "./node_modules/vue-router/dist/vue-router.d.ts"
+    ],
+    "paths": {
+      "@/*": ["src/*"],
+    },
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost", "es2019"]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "src/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
   ],
-  "types": ["node"]
- },
- "include": [
-   "src/**/*"
- ],
- "exclude": [
-   "node_modules"
- ],
+  "exclude": ["node_modules", "dist"] //排除检测项
 }
-
